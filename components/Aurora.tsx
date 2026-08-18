@@ -156,8 +156,9 @@ export function Aurora(props: AuroraProps) {
     window.addEventListener("resize", resize);
 
     const geometry = new Triangle(gl);
-    // @ts-expect-error - uv attribute unused for this fullscreen triangle
-    if (geometry.attributes.uv) delete geometry.attributes.uv;
+    if (geometry.attributes.uv) {
+      delete geometry.attributes.uv;
+    }
 
     const colorStopsArray = colorStops.map((hex) => {
       const c = new Color(hex);
