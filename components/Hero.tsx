@@ -1,37 +1,27 @@
 "use client";
 
-import { Aurora } from "@/components/Aurora";
 import { PillButton } from "@/components/ui/PillButton";
 import TextType from "@/components/ui/TextType";
 
 export function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#120f17]">
-      {/* Aurora background */}
-      <div className="absolute inset-0 z-0">
-        <Aurora
-          colorStops={["#5227FF", "#7cff67", "#5227FF"]}
-          amplitude={1}
-          blend={0.5}
-        />
-      </div>
-
+    <section className="relative isolate overflow-hidden bg-transparent">
       {/* Hero content */}
       <div className="container-shell relative z-10 grid min-h-[720px] items-center gap-16 py-20 lg:grid-cols-[1.15fr_0.85fr]">
         <div>
           <div className="eyebrow mb-6">
             <TextType
-              text="// AI-NATIVE COMPANY BUILDER"
-              typingSpeed={35}
-              initialDelay={250}
-              loop={false}
-              showCursor
-              cursorCharacter="_"
-              cursorBlinkDuration={0.7}
-              hideCursorWhileTyping={false}
-              className="font-system"
-              cursorClassName="text-[var(--accent)]"
-            />
+                text="// AI-NATIVE COMPANY BUILDER"
+                typingSpeed={35}
+                initialDelay={250}
+                loop={false}
+                showCursor
+                cursorCharacter="_"
+                cursorBlinkDuration={0.7}
+                hideCursorWhileTyping={false}
+                className="font-system text-[#c9a2ff]"
+                cursorClassName="text-[#c9a2ff]"
+              />
           </div>
 
           <h1
@@ -44,10 +34,10 @@ export function Hero() {
               tracking-[-0.035em]
               sm:text-6xl
               lg:text-[4.5rem]
-              xl:text-[3.5rem]
+              xl:text-[3.0rem]
             "
           >
-            Build AI-Native Startups
+            Building AI-Native Startups
           </h1>
 
           <p className="mt-8 max-w-[620px] text-[18px] leading-8 text-white/65">
