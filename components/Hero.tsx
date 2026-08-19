@@ -60,20 +60,27 @@ export function Hero() {
 
         {/* RIGHT SIDE */}
         <div className="hidden items-center justify-center lg:flex">
-          <div className="overflow-hidden rounded-full">
+          <div
+            className="rounded-full"
+            style={{
+              WebkitMaskImage:
+                "radial-gradient(circle, black 68%, transparent 100%)",
+              maskImage:
+                "radial-gradient(circle, black 68%, transparent 100%)",
+            }}
+          >
             <MagnetLines
               rows={12}
               columns={12}
-              containerSize="38vmin"
+              containerSize="42vmin"
               lineColor="#c9a2ff"
               lineWidth="2px"
               lineHeight="28px"
               baseAngle={-10}
-              style={{ opacity: 0.7 }}
+              style={{ opacity: 0.58 }}
             />
           </div>
         </div>
-
       </div>
     </section>
   );
