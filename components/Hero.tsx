@@ -27,17 +27,17 @@ export function Hero() {
           <h1
             className="
               font-display
-              max-w-[680px]
+              max-w-[780px]
               text-5xl
               font-normal
-              leading-[1.1]
+              leading-[1.05]
               tracking-[-0.035em]
               sm:text-6xl
               lg:text-[4.5rem]
-              xl:text-[3.0rem]
             "
           >
-            Find the market. Build the system
+            <span className="block">Find the market.</span>
+            <span className="block">Build the system.</span>
           </h1>
 
           <p className="mt-8 max-w-[620px] text-[18px] leading-8 text-white/65">
