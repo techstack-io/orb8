@@ -41,9 +41,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-[620px] text-[18px] leading-8 text-white/65">
-            ORB8 creates companies from the ground up, combining small human
-            teams with agentic systems to build and operate at a scale once
-            reserved for much larger organizations.
+            Most startups automate their assumptions before testing them.
+            ORB8 builds startups the other way: discover what the market actually says, then build the system that serves it.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
