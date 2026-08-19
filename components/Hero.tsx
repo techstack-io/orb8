@@ -2,26 +2,29 @@
 
 import { PillButton } from "@/components/ui/PillButton";
 import TextType from "@/components/ui/TextType";
+import MagnetLines from "@/components/MagnetLines";
 
 export function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-transparent">
       {/* Hero content */}
       <div className="container-shell relative z-10 grid min-h-[720px] items-center gap-16 py-20 lg:grid-cols-[1.15fr_0.85fr]">
+        
+        {/* LEFT SIDE */}
         <div>
           <div className="eyebrow mb-6">
             <TextType
-                text="// AI-NATIVE VENTURE STUDIO"
-                typingSpeed={35}
-                initialDelay={250}
-                loop={false}
-                showCursor
-                cursorCharacter="_"
-                cursorBlinkDuration={0.7}
-                hideCursorWhileTyping={false}
-                className="font-system text-[#c9a2ff]"
-                cursorClassName="text-[#c9a2ff]"
-              />
+              text="// AI-NATIVE VENTURE STUDIO"
+              typingSpeed={35}
+              initialDelay={250}
+              loop={false}
+              showCursor
+              cursorCharacter="_"
+              cursorBlinkDuration={0.7}
+              hideCursorWhileTyping={false}
+              className="font-system text-[#c9a2ff]"
+              cursorClassName="text-[#c9a2ff]"
+            />
           </div>
 
           <h1
@@ -41,8 +44,9 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-[620px] text-[18px] leading-8 text-white/65">
-            Most startups automate their assumptions before testing them.
-            ORB8 builds startups the other way: discover what the market actually says, then build the system that serves it.
+            Most startups automate their assumptions before testing them. ORB8
+            builds startups the other way: discover what the market actually
+            says, then build the system that serves it.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -53,6 +57,21 @@ export function Hero() {
             </PillButton>
           </div>
         </div>
+
+        {/* RIGHT SIDE */}
+        <div className="hidden items-center justify-center lg:flex">
+          <MagnetLines
+            rows={10}
+            columns={12}
+            containerSize="38vmin"
+            lineColor="#c9a2ff"
+            lineWidth="2px"
+            lineHeight="28px"
+            baseAngle={-10}
+            style={{ opacity: 0.7 }}
+          />
+        </div>
+
       </div>
     </section>
   );
