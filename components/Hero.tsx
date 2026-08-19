@@ -60,16 +60,18 @@ export function Hero() {
 
         {/* RIGHT SIDE */}
         <div className="hidden items-center justify-center lg:flex">
-          <MagnetLines
-            rows={10}
-            columns={12}
-            containerSize="38vmin"
-            lineColor="#c9a2ff"
-            lineWidth="2px"
-            lineHeight="28px"
-            baseAngle={-10}
-            style={{ opacity: 0.7 }}
-          />
+          <div className="overflow-hidden rounded-full">
+            <MagnetLines
+              rows={12}
+              columns={12}
+              containerSize="38vmin"
+              lineColor="#c9a2ff"
+              lineWidth="2px"
+              lineHeight="28px"
+              baseAngle={-10}
+              style={{ opacity: 0.7 }}
+            />
+          </div>
         </div>
 
       </div>
