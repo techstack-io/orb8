@@ -33,10 +33,10 @@ export function Hero() {
               max-w-[780px]
               text-5xl
               font-normal
-              leading-[1.05]
+              leading-[1.25]
               tracking-[-0.035em]
               sm:text-6xl
-              lg:text-[4.5rem]
+              lg:text-[3.0rem]
             "
           >
             <span className="block">Find the market.</span>
