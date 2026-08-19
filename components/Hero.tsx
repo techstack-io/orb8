@@ -11,7 +11,7 @@ export function Hero() {
         <div>
           <div className="eyebrow mb-6">
             <TextType
-                text="// AI-NATIVE COMPANY BUILDER"
+                text="// AI-NATIVE VENTURE STUDIO"
                 typingSpeed={35}
                 initialDelay={250}
                 loop={false}
