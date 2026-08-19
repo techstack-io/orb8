@@ -37,7 +37,7 @@ export function Hero() {
               xl:text-[3.0rem]
             "
           >
-            Building AI-Native Startups
+            Find the market. Build the system
           </h1>
 
           <p className="mt-8 max-w-[620px] text-[18px] leading-8 text-white/65">
