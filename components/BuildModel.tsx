@@ -3,51 +3,52 @@
 import { useState } from "react";
 import LineSidebar from "@/components/ui/LineSidebar";
 
-const principles = [
+const diagnosticSteps = [
   {
-    title: "People + agents",
-    lead: "Human judgment where it matters. Machine capability everywhere else.",
+    title: "Observe the signal",
+    lead:
+      "Start with what is actually happening, not what you think is happening.",
     body:
-      "Small teams remain responsible for direction, judgment, and accountability. Agentic systems expand their ability to execute, analyze, and operate.",
+      "ORB8 examines traffic, acquisition, customer behavior, conversion, retention, reviews, competitors, and market signals to establish the evidence.",
   },
   {
-    title: "AI-native by design",
-    lead: "Companies designed for AI from day one, not retrofitted later.",
+    title: "Locate the break",
+    lead: "Find the point where momentum stops.",
     body:
-      "Workflows, tools, memory, automation, and human oversight are designed together from the beginning rather than added to a traditional organization later.",
+      "ORB8 traces the problem across visibility, audience, message, demand, conversion, and retention to isolate the most likely failure point.",
   },
   {
-    title: "Systemize the work",
-    lead: "Repeatable work becomes infrastructure.",
+    title: "Test the cause",
+    lead: "Turn assumptions into evidence.",
     body:
-      "When a workflow proves useful, ORB8 turns it into a reusable capability rather than solving the same operational problem again and again.",
+      "ORB8 identifies what needs to be learned and designs focused experiments to distinguish the real cause from plausible explanations.",
   },
   {
-    title: "Build to endure",
-    lead: "Technology changes quickly. Durable companies should not.",
+    title: "Make the next move",
+    lead: "Act on the highest-value evidence first.",
     body:
-      "ORB8 uses emerging AI capabilities aggressively without making any single model, vendor, or tool the foundation of the company.",
+      "ORB8 turns the diagnosis into a specific next test, what to measure, and what the result means for the venture.",
   },
 ];
 
 export function BuildModel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const active = principles[activeIndex];
+  const active = diagnosticSteps[activeIndex];
 
   return (
     <section id="build" className="container-shell py-24">
-      <div className="eyebrow">// 02 — How we build</div>
+      <div className="eyebrow !text-[#d1c5ea]">// 02 — HOW ORB8 DIAGNOSES</div>
 
-      <h2 className="mt-4 text-4xl tracking-[-0.03em]">
-        An agentic operating model.
+      <h2 className="mt-4 max-w-3xl text-4xl tracking-[-0.03em] md:text-5xl">
+        Find where the signal breaks.
       </h2>
 
       <div className="mt-16 grid gap-16 lg:grid-cols-[360px_1fr] lg:gap-24">
         <div>
           <LineSidebar
-            items={principles.map((item) => item.title)}
-            accentColor="#5eead4"
+            items={diagnosticSteps.map((item) => item.title)}
+            accentColor="#D6FF4D"
             textColor="#777d82"
             markerColor="#303438"
             showIndex
@@ -70,7 +71,7 @@ export function BuildModel() {
         <div className="border-l hairline pl-8 lg:pl-14">
           <div className="text-xs uppercase tracking-[0.16em] text-white/35">
             {String(activeIndex + 1).padStart(2, "0")} /{" "}
-            {String(principles.length).padStart(2, "0")}
+            {String(diagnosticSteps.length).padStart(2, "0")}
           </div>
 
           <h3 className="mt-6 text-3xl tracking-[-0.025em]">

@@ -4,6 +4,7 @@ import {
   IBM_Plex_Mono,
   WDXL_Lubrifont_TC,
   Space_Grotesk,
+  Rajdhani,
 } from "next/font/google";
 import "./globals.css";
 
@@ -30,6 +31,12 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "500"],
 });
 
+const rajdhani = Rajdhani({
+  variable: "--font-rajdhani",
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+});
+
 export const metadata: Metadata = {
   title: "ORB8 — Building AI-Native Startups",
   description:
@@ -44,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${plexMono.variable} ${wdXl.variable} ${spaceGrotesk.variable}`}
+        className={`${dmSans.variable} ${plexMono.variable} ${wdXl.variable} ${spaceGrotesk.variable} ${rajdhani.variable}`}
       >
         {children}
       </body>

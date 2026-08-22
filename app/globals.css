@@ -30,6 +30,10 @@ body {
   font-family: var(--font-space-grotesk), sans-serif;
 }
 
+.font-heading {
+  font-family: var(--font-rajdhani), sans-serif;
+}
+
 .font-wdxl {
   font-family: var(--font-wdxl), sans-serif;
 }

@@ -8,9 +8,9 @@ export function Header() {
           aria-label="ORB8 home"
         >
           <img
-            src="/logos/orb8-logo-vert.png"
+            src="/logos/orb8-cgpt2.png"
             alt="ORB8"
-            className="h-16 w-auto"
+            className="h-18 w-auto"
           />
         </a>
 
