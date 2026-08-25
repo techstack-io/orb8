@@ -121,7 +121,7 @@ export function PillButton({ href, children }: PillButtonProps) {
           left-1/2
           z-[1]
           rounded-full
-          bg-[#c9a2ff]
+          bg-[#9414F4]
         "
       />
 
