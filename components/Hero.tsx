@@ -70,6 +70,7 @@ export function Hero() {
                         </PillButton>
                     </div>
                 </div>
+                <div className="hidden h-[420px] w-px bg-transparent lg:block" />
                   {/* RIGHT */}
                   <div className="hidden lg:flex lg:justify-start">
                     <div
