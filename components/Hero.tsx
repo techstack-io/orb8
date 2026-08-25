@@ -112,9 +112,6 @@ export function Hero() {
                           showCursor
                           cursorCharacter="_"
                           cursorBlinkDuration={0.5}
-                          variableSpeedEnabled
-                          variableSpeedMin={25}
-                          variableSpeedMax={65}
                           className="font-system text-[14px] uppercase tracking-[0.1em] text-[#CDF414]"
                           cursorClassName="text-[#CDF414]"
                         />
