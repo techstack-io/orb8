@@ -181,9 +181,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-[560px] text-[17px] leading-8 text-white/60">
-            ORB8 finds out why your venture isn't gaining traction. We diagnose
-            where the breakdown is happening, then turn real market and customer
-            evidence into the next experiment you should run.
+            ORB8 identifies what’s blocking traction, validates it with real market and customer evidence, and shows you what to test next.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
