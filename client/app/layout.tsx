@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import {
   DM_Sans,
   IBM_Plex_Mono,
@@ -6,6 +7,9 @@ import {
   Space_Grotesk,
   Rajdhani,
 } from "next/font/google";
+
+import { ClerkProvider } from "@clerk/nextjs";
+
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -49,12 +53,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${dmSans.variable} ${plexMono.variable} ${wdXl.variable} ${spaceGrotesk.variable} ${rajdhani.variable}`}
-      >
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${dmSans.variable} ${plexMono.variable} ${wdXl.variable} ${spaceGrotesk.variable} ${rajdhani.variable}`}
+        >
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
