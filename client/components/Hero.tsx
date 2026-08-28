@@ -181,7 +181,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-8 max-w-[560px] text-[17px] leading-8 text-white/60">
-            ORB8 identifies what’s blocking traction, validates it with real market and customer evidence, and shows you what to test next.
+            ORB8 identifies what’s blocking traction, validates it with real market insights, and shows you what to test next.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
