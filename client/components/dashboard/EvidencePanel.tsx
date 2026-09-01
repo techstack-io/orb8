@@ -3,14 +3,14 @@ import Link from "next/link";
 
 const evidence = [
   {
-    source: "Pollfish",
-    type: "Primary research",
-    signal: "Concept validation",
-    score: null,
-    finding:
-      "Direct respondent evidence from the Mettavia concept test. Open the survey analysis for question-level results and segment findings.",
-    href: "/dashboard/evidence/pollfish",
-    primary: true,
+  source: "Pollfish",
+  type: "Primary research",
+  signal: "Concept validation",
+  score: null,
+  finding:
+    "Direct respondent evidence from the Mettavia concept test. Open the survey analysis for question-level results and segment findings.",
+  href: "/dashboard/evidence",
+  primary: true,
   },
   {
     source: "DataForSEO",
