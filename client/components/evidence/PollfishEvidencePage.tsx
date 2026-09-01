@@ -1,5 +1,11 @@
 import React from "react";
 
+import {
+  pollfishEvidence,
+  type PollfishEvidence,
+  type PollfishSignal,
+} from "@/lib/evidence/pollfish";
+
 type PollfishSignal = {
   label: string;
   strength: "Strong" | "Moderate" | "Weak" | "Uncertain" | "Emerging";
