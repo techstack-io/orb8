@@ -2,78 +2,8 @@ import React from "react";
 
 import {
   pollfishEvidence,
-  type PollfishEvidence,
   type PollfishSignal,
 } from "@/lib/evidence/pollfish";
-
-type PollfishSignal = {
-  label: string;
-  strength: "Strong" | "Moderate" | "Weak" | "Uncertain" | "Emerging";
-  score?: number;
-  finding: string;
-};
-
-type PollfishMetric = {
-  label: string;
-  value: string;
-  note?: string;
-};
-
-type PollfishSegment = {
-  segment: string;
-  value: string;
-  index?: string;
-  note?: string;
-};
-
-type PollfishQuestion = {
-  id: string;
-  question: string;
-  responses: Array<{
-    label: string;
-    count?: number;
-    percent?: number;
-  }>;
-};
-
-type PollfishEvidence = {
-  surveyTitle: string;
-  venture: string;
-  respondentCount?: number;
-  statusLabel?: string;
-  metrics: PollfishMetric[];
-  signals: PollfishSignal[];
-  segments: PollfishSegment[];
-  questions: PollfishQuestion[];
-  conclusion?: string;
-  known?: string[];
-  unknown?: string[];
-  recommendedTest?: {
-    title: string;
-    description: string;
-    emphasis?: string;
-  };
-};
-
-/*
- * IMPORTANT:
- *
- * These arrays are intentionally empty.
- *
- * We will populate them with the ACTUAL Pollfish workbook results
- * rather than hard-coding the illustrative numbers from the mockup.
- */
-const pollfishEvidence: PollfishEvidence = {
-  surveyTitle: "Single Product Concept Testing",
-  venture: "Mettavia",
-  statusLabel: "Primary Research",
-  metrics: [],
-  signals: [],
-  segments: [],
-  questions: [],
-  known: [],
-  unknown: [],
-};
 
 function MetricCard({
   label,
@@ -94,11 +24,11 @@ function MetricCard({
         {value}
       </div>
 
-      {note && (
+      {note ? (
         <div className="mt-1 text-[12px] leading-5 text-[#120F17]/45">
           {note}
         </div>
-      )}
+      ) : null}
     </div>
   );
 }
@@ -144,9 +74,6 @@ export default function PollfishEvidencePage() {
   return (
     <main className="min-h-screen bg-[#F4F1EB] text-[#120F17]">
       <div className="mx-auto max-w-[1500px] px-6 py-8 lg:px-10">
-
-        {/* HEADER */}
-
         <header className="border-b border-[#120F17]/10 pb-7">
           <div className="font-system text-[10px] uppercase tracking-[0.22em] text-[#778A00]">
             ORB8 / Evidence / Pollfish
@@ -160,7 +87,7 @@ export default function PollfishEvidencePage() {
                 </h1>
 
                 <span className="rounded-full bg-[#E9D8FF] px-3 py-1 font-system text-[9px] uppercase tracking-[0.14em] text-[#6F45A2]">
-                  {data.statusLabel}
+                  {data.statusLabel ?? "Primary Research"}
                 </span>
               </div>
 
@@ -173,23 +100,32 @@ export default function PollfishEvidencePage() {
             </div>
 
             <div className="flex flex-wrap gap-3">
-              <button className="rounded-full border border-[#120F17]/10 bg-white px-5 py-2.5 font-system text-[9px] uppercase tracking-[0.14em] text-[#120F17]/65">
+              <button
+                type="button"
+                className="rounded-full border border-[#120F17]/10 bg-white px-5 py-2.5 font-system text-[9px] uppercase tracking-[0.14em] text-[#120F17]/65"
+              >
                 Export Evidence
               </button>
 
-              <button className="rounded-full bg-[#120F17] px-5 py-2.5 font-system text-[9px] font-semibold uppercase tracking-[0.14em] text-[#CDF414]">
+              <button
+                type="button"
+                className="rounded-full bg-[#120F17] px-5 py-2.5 font-system text-[9px] font-semibold uppercase tracking-[0.14em] text-[#CDF414]"
+              >
                 Create Experiment
               </button>
             </div>
           </div>
         </header>
 
-        {/* METRICS */}
-
         <section className="mt-7 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
           {hasMetrics ? (
             data.metrics.slice(0, 5).map((metric) => (
-              <MetricCard key={metric.label} {...metric} />
+              <MetricCard
+                key={metric.label}
+                label={metric.label}
+                value={metric.value}
+                note={metric.note}
+              />
             ))
           ) : (
             <>
@@ -226,10 +162,7 @@ export default function PollfishEvidencePage() {
           )}
         </section>
 
-        {/* SIGNALS + ORB8 INTERPRETATION */}
-
         <section className="mt-5 grid gap-5 xl:grid-cols-[1.15fr_0.85fr]">
-
           <div className="rounded-[22px] border border-[#120F17]/10 bg-white">
             <div className="border-b border-[#120F17]/10 px-7 py-6">
               <div className="font-system text-[10px] uppercase tracking-[0.2em] text-[#120F17]/35">
@@ -295,7 +228,7 @@ export default function PollfishEvidencePage() {
               </p>
             )}
 
-            {data.recommendedTest && (
+            {data.recommendedTest ? (
               <div className="mt-7 rounded-[18px] border border-[#CDF414]/20 bg-[#CDF414]/[0.05] p-5">
                 <div className="font-system text-[9px] uppercase tracking-[0.16em] text-[#CDF414]">
                   Recommended next test
@@ -309,20 +242,17 @@ export default function PollfishEvidencePage() {
                   {data.recommendedTest.description}
                 </p>
 
-                {data.recommendedTest.emphasis && (
+                {data.recommendedTest.emphasis ? (
                   <div className="mt-4 font-system text-[12px] text-[#CDF414]">
                     {data.recommendedTest.emphasis}
                   </div>
-                )}
+                ) : null}
               </div>
-            )}
+            ) : null}
           </div>
         </section>
 
-        {/* SEGMENTS + QUESTIONS */}
-
         <section className="mt-5 grid gap-5 xl:grid-cols-[0.8fr_1.2fr]">
-
           <div className="rounded-[22px] border border-[#120F17]/10 bg-white">
             <div className="border-b border-[#120F17]/10 px-7 py-6">
               <div className="font-system text-[10px] uppercase tracking-[0.2em] text-[#120F17]/35">
@@ -347,11 +277,11 @@ export default function PollfishEvidencePage() {
                           {segment.segment}
                         </div>
 
-                        {segment.note && (
+                        {segment.note ? (
                           <div className="mt-1 text-[12px] leading-5 text-[#120F17]/45">
                             {segment.note}
                           </div>
-                        )}
+                        ) : null}
                       </div>
 
                       <div className="font-system text-[13px] text-[#120F17]/75">
@@ -393,7 +323,7 @@ export default function PollfishEvidencePage() {
             <div className="p-5">
               {hasQuestions ? (
                 <div className="space-y-4">
-                  {data.questions.slice(0, 4).map((question, index) => (
+                  {data.questions.map((question, index) => (
                     <div
                       key={question.id}
                       className="rounded-[18px] border border-[#120F17]/10 bg-[#FAF9F6] p-5"
@@ -408,7 +338,7 @@ export default function PollfishEvidencePage() {
 
                       <div className="mt-4 space-y-3">
                         {question.responses.map((response) => (
-                          <div key={response.label}>
+                          <div key={`${question.id}-${response.label}`}>
                             <div className="mb-1.5 flex items-center justify-between gap-4 text-[12px]">
                               <span className="text-[#120F17]/60">
                                 {response.label}
@@ -427,10 +357,7 @@ export default function PollfishEvidencePage() {
                                 style={{
                                   width: `${Math.max(
                                     0,
-                                    Math.min(
-                                      100,
-                                      response.percent ?? 0
-                                    )
+                                    Math.min(100, response.percent ?? 0)
                                   )}%`,
                                 }}
                               />
@@ -451,10 +378,7 @@ export default function PollfishEvidencePage() {
           </div>
         </section>
 
-        {/* KNOWN / UNKNOWN */}
-
         <section className="mt-5 grid gap-5 lg:grid-cols-2">
-
           <div className="rounded-[22px] border border-[#120F17]/10 bg-white p-7">
             <div className="font-system text-[10px] uppercase tracking-[0.2em] text-[#778A00]">
               What we know
