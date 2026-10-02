@@ -180,7 +180,7 @@ export function Hero() {
             "
           >
             <BlurText
-              text="I build intelligent systems."
+              text="building intelligent systems."
               animateBy="words"
               direction="top"
               delay={140}
