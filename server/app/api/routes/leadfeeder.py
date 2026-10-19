@@ -10,7 +10,7 @@ api_key_header = APIKeyHeader(
     description="Your existing legacy Leadfeeder API token",
 )
 
-LEADFEEDER_BASE_URL = "https://api.leadfeeder.com"
+LEADFEEDER_BASE_URL = "https://api.leadfeeder.com/v1"
 
 
 @router.get("/accounts")
