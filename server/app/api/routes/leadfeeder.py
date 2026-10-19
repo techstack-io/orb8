@@ -1,35 +1,37 @@
 
 import httpx
-from fastapi import APIRouter, Depends, HTTPException, Security
+from fastapi import APIRouter, HTTPException, Security
 from fastapi.security import APIKeyHeader
 
 router = APIRouter(prefix="/leadfeeder", tags=["leadfeeder"])
 
 api_key_header = APIKeyHeader(
     name="X-Api-Key",
-    description="Your existing Leadfeeder API key",
+    description="Your existing legacy Leadfeeder API token",
 )
 
-LEADFEEDER_BASE_URL = "https://api.leadfeeder.com/v1"
+LEADFEEDER_BASE_URL = "https://api.leadfeeder.com"
 
 
 @router.get("/accounts")
 async def get_leadfeeder_accounts(
     api_key: str = Security(api_key_header),
 ):
-    """Read the Leadfeeder accounts accessible to this API key."""
+    """Retrieve accounts using the legacy Leadfeeder API."""
 
     try:
         async with httpx.AsyncClient(timeout=30.0) as client:
             response = await client.get(
                 f"{LEADFEEDER_BASE_URL}/accounts",
-                headers={"X-Api-Key": api_key},
+                headers={
+                    "Authorization": f"Token token={api_key}"
+                },
             )
 
         if response.status_code != 200:
             raise HTTPException(
                 status_code=response.status_code,
-                detail="Leadfeeder rejected the request. Check the API key and permissions.",
+                detail=f"Legacy Leadfeeder API returned HTTP {response.status_code}",
             )
 
         return response.json()
@@ -37,5 +39,5 @@ async def get_leadfeeder_accounts(
     except httpx.RequestError:
         raise HTTPException(
             status_code=502,
-            detail="Could not connect to Leadfeeder.",
+            detail="Unable to connect to Leadfeeder",
         )
