@@ -30,7 +30,7 @@ export default function Home() {
       <Header />
 
       {/* HERO SECTION */}
-      <section className="relative isolate min-h-[650px] overflow-hidden bg-[#0C0A10]">
+      <section className="relative isolate min-h-[650px] overflow-hidden bg-[#070609]">
 
         {/* FERROFLUID ANIMATION */}
         <div
