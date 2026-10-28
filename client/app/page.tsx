@@ -26,7 +26,7 @@ const steps = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#120f17] text-white">
+    <main className="min-h-screen bg-[#0C0A10] text-white">
       <Header />
 
       {/* HERO SECTION */}
