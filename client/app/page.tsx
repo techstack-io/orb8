@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Header } from "@/components/Header";
 
 type View = "overview" | "market" | "evidence" | "hypotheses" | "experiments";
 const sections: { id: View; label: string; number: string; description: string }[] = [
@@ -29,16 +30,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#120f17] text-[#f6f3f9]">
-      <header className="border-b border-white/10">
-        <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-4 px-5 py-5 sm:px-8">
-          <div className="flex items-center gap-4">
-            <a href="/" className="flex items-center" aria-label="ORB8 home"><img src="/logos/orb8-cgpt2.png" alt="ORB8" className="h-18 w-auto" /></a>
-            <span className="hidden h-6 w-px bg-white/15 sm:block" />
-            <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-white/45 sm:block">Market intelligence / Validation</span>
-          </div>
-          <span className="rounded-full border border-[#CDF414]/25 bg-[#CDF414]/[0.07] px-3 py-1.5 font-mono text-[10px] uppercase tracking-wider text-[#CDF414]">Research workspace</span>
-        </div>
-      </header>
+      <Header />
 
       <div className="mx-auto grid max-w-[1500px] md:grid-cols-[240px_minmax(0,1fr)]">
         <aside className="border-b border-white/10 p-5 md:min-h-[calc(100vh-85px)] md:border-b-0 md:border-r md:p-6">

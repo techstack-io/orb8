@@ -1,36 +1,39 @@
+
+import Link from "next/link";
+
 export function Header() {
   return (
-    <header className="border-b hairline">
-      <div className="container-shell flex h-24 items-center justify-between">
-        <div className="flex items-center gap-7">
-          <a href="/" className="flex items-center" aria-label="ORB8 home">
-            <img
-              src="/logos/orb8-cgpt2.png"
-              alt="ORB8"
-              className="h-18 w-auto"
-            />
-          </a>
+    <header className="border-b border-white/10 bg-[#120f17]">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
+        <Link href="/" aria-label="ORB8 home">
+          <img
+            src="/logos/orb8-cgpt2.png"
+            alt="ORB8"
+            className="h-18 w-auto"
+          />
+        </Link>
 
-          <div className="hidden h-5 w-px bg-white/15 sm:block" />
+        <nav className="flex items-center gap-6 text-sm">
+          <Link
+            href="/#how-it-works"
+            className="hidden text-white/60 hover:text-white sm:block"
+          >
+            How it works
+          </Link>
 
-          <span className="hidden font-system text-[10px] uppercase tracking-[0.2em] text-white/50 sm:block">
-            Dan Collins / AI Engineer
-          </span>
-        </div>
+          <Link
+            href="/dashboard"
+            className="hidden text-white/60 hover:text-white sm:block"
+          >
+            Dashboard
+          </Link>
 
-        <nav className="hidden gap-8 text-xs uppercase tracking-[0.14em] text-white/70 md:flex">
-          <a className="transition-colors hover:text-[#CDF414]" href="#work">
-            Work
-          </a>
-          <a className="transition-colors hover:text-[#CDF414]" href="#writing">
-            Writing
-          </a>
-          <a className="transition-colors hover:text-[#CDF414]" href="#about">
-            About
-          </a>
-          <a className="transition-colors hover:text-[#CDF414]" href="#contact">
-            Contact
-          </a>
+          <Link
+            href="/onboarding"
+            className="rounded-full bg-[#CDF414] px-5 py-2.5 font-semibold text-[#120f17]"
+          >
+            Get started
+          </Link>
         </nav>
       </div>
     </header>
