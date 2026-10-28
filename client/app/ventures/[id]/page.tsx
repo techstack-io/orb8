@@ -195,7 +195,7 @@ export default function Home() {
           )}
           <footer className="mt-16 border-t border-white/10 pt-5 font-mono text-[10px] uppercase tracking-widest text-white/30">ORB8 / Evidence before assumptions</footer>
         </div>
-      </div></> 
+      </div></>} 
     </main>
   );
 }
