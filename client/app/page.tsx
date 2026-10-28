@@ -61,8 +61,8 @@ export default function Home() {
               Market intelligence / Venture validation
             </p>
 
-            <h1 className="text-5xl font-semibold leading-[1.08] tracking-tight md:text-5xl">
-              What’s holding your business back.
+            <h1 className="text-5xl font-semibold leading-[1.08] tracking-tight md:text-4xl">
+              What’s holding your business back?
             </h1>
 
             <p className="mt-8 max-w-xl text-lg leading-8 text-white/70">
