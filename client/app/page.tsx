@@ -31,11 +31,9 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section className="relative isolate min-h-[650px] overflow-hidden bg-[#070609]">
-
-        {/* FERROFLUID ANIMATION */}
+        {/* FERROFLUID — RIGHT SIDE */}
         <div
-          className="absolute inset-0 z-0"
-          style={{ width: "100%", height: "100%", position: "absolute" }}
+          className="pointer-events-none absolute inset-y-0 right-0 z-0 w-full md:w-[65%]"
           aria-hidden="true"
         >
           <Ferrofluid
@@ -43,15 +41,22 @@ export default function Home() {
             spikeHeight={1}
             sharpness={2.5}
             tilt={48}
+            scale={1.6}
+            transparent
             mouseInteraction
             clickPulse
           />
         </div>
 
+        {/* GRADIENT — PROTECTS TEXT READABILITY */}
+        <div
+          className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r from-[#070609] via-[#070609]/90 to-transparent"
+          aria-hidden="true"
+        />
+
         {/* HERO CONTENT */}
         <div className="pointer-events-none relative z-10 mx-auto max-w-7xl px-6 pb-28 pt-28">
-          <div className="max-w-4xl">
-
+          <div className="max-w-2xl">
             <p className="mb-7 font-mono text-xs uppercase tracking-[0.25em] text-[#CDF414]">
               Market intelligence / Venture validation
             </p>
@@ -60,7 +65,7 @@ export default function Home() {
               What’s holding your business back.
             </h1>
 
-            <p className="mt-8 max-w-2xl text-lg leading-8 text-white/70">
+            <p className="mt-8 max-w-xl text-lg leading-8 text-white/70">
               ORB8 investigates your market, customers,
               competitors, and demand signals to help you
               understand what’s working, what’s uncertain,
@@ -68,7 +73,6 @@ export default function Home() {
             </p>
 
             <div className="pointer-events-auto mt-10 flex flex-wrap gap-4">
-
               <Link
                 href="/onboarding"
                 className="rounded-full bg-[#CDF414] px-7 py-3.5 font-semibold text-[#120f17] transition hover:bg-[#dfff35]"
@@ -82,7 +86,6 @@ export default function Home() {
               >
                 How ORB8 works
               </Link>
-
             </div>
           </div>
         </div>
@@ -94,7 +97,6 @@ export default function Home() {
         className="border-t border-white/10 bg-white/[0.02] py-24"
       >
         <div className="mx-auto max-w-7xl px-6">
-
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#CDF414]">
             The ORB8 process
           </p>
@@ -123,7 +125,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-
         </div>
       </section>
     </main>
