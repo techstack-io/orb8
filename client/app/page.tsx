@@ -32,7 +32,7 @@ export default function Home() {
       <header className="border-b border-white/10">
         <div className="mx-auto flex max-w-[1500px] items-center justify-between gap-4 px-5 py-5 sm:px-8">
           <div className="flex items-center gap-4">
-            <a href="/" className="font-mono text-2xl font-bold tracking-[-0.07em] text-[#CDF414]" aria-label="ORB8 home">ORB8</a>
+            <a href="/" className="flex items-center" aria-label="ORB8 home"><img src="/logos/orb8-cgpt2.png" alt="ORB8" className="h-18 w-auto" /></a>
             <span className="hidden h-6 w-px bg-white/15 sm:block" />
             <span className="hidden font-mono text-[10px] uppercase tracking-[0.2em] text-white/45 sm:block">Market intelligence / Validation</span>
           </div>
