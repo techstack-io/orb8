@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Header } from "@/components/Header";
+import Ferrofluid from "@/components/Ferrofluid";
 
 const steps = [
   { number: "01", title: "Investigate", description: "Understand your market, customers, competitors, and demand signals." },
@@ -10,7 +11,12 @@ const steps = [
 export default function Home() {
   return <main className="min-h-screen bg-[#120f17] text-white">
     <Header />
-    <section className="mx-auto max-w-7xl px-6 pb-28 pt-28">
+    <section className="relative isolate overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 -z-10 opacity-70" aria-hidden="true">
+        <Ferrofluid colors={["#CDF414", "#9dbb0c", "#ffffff"]} speed={0.4} scale={1.5} spikeHeight={1} sharpness={2.5} tilt={48} mouseInteraction clickPulse transparent />
+      </div>
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-[#120f17] via-[#120f17]/85 to-[#120f17]/20" />
+      <div className="mx-auto max-w-7xl px-6 pb-28 pt-28">
       <div className="max-w-4xl">
         <p className="mb-7 font-mono text-xs uppercase tracking-[0.25em] text-[#CDF414]">Market intelligence / Venture validation</p>
         <h1 className="text-5xl font-semibold leading-[1.08] tracking-tight md:text-7xl">Find out what’s holding your business back.</h1>
@@ -19,6 +25,7 @@ export default function Home() {
           <Link href="/onboarding" className="rounded-full bg-[#CDF414] px-7 py-3.5 font-semibold text-[#120f17]">Start an evaluation</Link>
           <Link href="#how-it-works" className="rounded-full border border-white/20 px-7 py-3.5 text-white/80 hover:border-white/50">How ORB8 works</Link>
         </div>
+      </div>
       </div>
     </section>
     <section id="how-it-works" className="border-t border-white/10 bg-white/[0.02] py-24">
