@@ -23,7 +23,7 @@ body {
     var(--background);
 
   color: var(--foreground);
-  font-family: var(--font-dm-sans), sans-serif;
+  font-family: var(--font-space-grotesk), sans-serif;
 }
 
 .font-display {
@@ -36,10 +36,6 @@ body {
 
 .font-wdxl {
   font-family: var(--font-wdxl), sans-serif;
-}
-
-.font-system {
-  font-family: var(--font-plex-mono), monospace;
 }
 
 .font-system {

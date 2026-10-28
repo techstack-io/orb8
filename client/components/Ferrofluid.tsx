@@ -945,7 +945,6 @@ const Ferrofluid = ({
       gl.deleteProgram(render.program);
       gl.deleteBuffer(buffer);
       gl.deleteVertexArray(vao);
-      gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
   }, []);
 
